@@ -12,7 +12,7 @@ object SparkStatFormatJob {
     val spark = SparkSession.builder().appName("SparkStatFormatJob")
               .master("local[2]").getOrCreate()
 
-    val access = spark.sparkContext.textFile("file:///E:/项目资料/慕课网日志分析/项目资料/data/10000_access.log")
+    val access = spark.sparkContext.textFile("/Users/lemon/project/data/10000_access.log")
 
     //access.take(10).foreach(println)
 
@@ -29,7 +29,7 @@ object SparkStatFormatJob {
       val traffic = splits(9)
 //      (ip, DateUtils.parse(time), url, traffic)
       DateUtils.parse(time) + "\t" + url + "\t" + traffic + "\t" + ip
-    }).saveAsTextFile("file:///E:/项目资料/慕课网日志分析/项目资料/output/")
+    }).saveAsTextFile("/Users/lemon/project/output/")
 
     spark.stop()
   }
