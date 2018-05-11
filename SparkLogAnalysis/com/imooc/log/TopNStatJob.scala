@@ -16,7 +16,7 @@ object TopNStatJob {
       .config("spark.sql.sources.partitionColumnTypeInference.enabled", "false")
       .master("local[2]").getOrCreate()
 
-    val accessDF = spark.read.format("parquet").load("E:/项目资料/慕课网日志分析/项目资料/clean")
+    val accessDF = spark.read.format("parquet").load("/Users/lemon/project/clean")
 
 //    accessDF.printSchema()
 //    accessDF.show(false)
