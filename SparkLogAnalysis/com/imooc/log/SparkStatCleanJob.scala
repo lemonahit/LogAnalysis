@@ -11,7 +11,7 @@ object SparkStatCleanJob {
     val spark = SparkSession.builder().appName("SparkStatCleanJob")
       .master("local[2]").getOrCreate()
 
-    val accessRDD = spark.sparkContext.textFile("E:/项目资料/慕课网日志分析/项目资料/data/data/access.log")
+    val accessRDD = spark.sparkContext.textFile("/Users/lemon/project/data/access.log")
 
     //accessRDD.take(10).foreach(println)
 
@@ -23,7 +23,7 @@ object SparkStatCleanJob {
 //    accessDF.show(false)
 
     accessDF.coalesce(1).write.format("parquet").mode(SaveMode.Overwrite)
-            .partitionBy("day").save("E:/项目资料/慕课网日志分析/项目资料/clean")
+            .partitionBy("day").save("/Users/lemon/project/clean")
 
     spark.stop()
   }
