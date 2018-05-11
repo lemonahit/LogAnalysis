@@ -19,24 +19,33 @@ ECharts可视化展示
 
 ![Image text](pic/离线数据处理架构.png)
 
-1. 数据采集
-Flume： web日志写入到HDFS
+- 数据采集
 
-2. 数据清洗
-脏数据
-Spark、Hive、MapReduce 或者是其他的一些分布式计算框架 
-清洗完之后的数据可以存放在HDFS(Hive/Spark SQL)
+  Flume： web日志写入到HDFS
 
-3. 数据处理
-按照我们的需要进行相应业务的统计和分析
-Spark、Hive、MapReduce 或者是其他的一些分布式计算框架
+- 数据清洗
 
-4. 数据处理结果入库
-结果可以存放到RDBMS、NoSQL
+  脏数据
+  
+  Spark、Hive、MapReduce 或者是其他的一些分布式计算框架 
+  
+  清洗完之后的数据可以存放在HDFS(Hive/Spark SQL)
 
-5. 数据的可视化展示
-通过图形化展示的方式展现出来：饼图、柱状图、地图、折线图
-ECharts、HUE、Zeppelin
+- 数据处理
+
+  按照我们的需要进行相应业务的统计和分析
+  
+  Spark、Hive、MapReduce 或者是其他的一些分布式计算框架
+
+- 数据处理结果入库
+
+  结果可以存放到RDBMS、NoSQL
+
+- 数据的可视化展示
+
+  通过图形化展示的方式展现出来：饼图、柱状图、地图、折线图
+  
+  ECharts、HUE、Zeppelin
 
 ## 项目需求
 
